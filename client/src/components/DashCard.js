@@ -1,9 +1,9 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 export default function DashCard({forum}) {
     return (
         <div className="Card">
-            <li>{forum.topic}</li>
+            <NavLink to={`/${forum.id}`} >{forum.topic}</NavLink>
         </div>
     )
 }

@@ -1,14 +1,7 @@
 import React, {useState, useEffect} from "react";
 import DashList from "./DashList";
 
-export default function Dashboard() {
-    const [forums, setForums] = useState([]);
-
-    useEffect(() => {
-        fetch("/forums")
-          .then((r) => r.json())
-          .then(setForums);
-      }, []);
+export default function Dashboard({forums}) {
 
     console.log(forums)
 
