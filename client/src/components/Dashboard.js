@@ -1,26 +1,23 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import DashList from "./DashList";
 
-export default function Dashboard({forums}) {
+export default function Dashboard({favs, forums}) {
 
-    console.log(forums)
 
     const frms = [...forums]
 
     const gamingFrms = frms.filter(forum => forum.subject === "gaming")
-    console.log(gamingFrms);
 
     const historyFrms = frms.filter(forum => forum.subject === "history")
-    console.log(historyFrms);
 
     const cookingFrms = frms.filter(forum => forum.subject === "cooking")
-    console.log(cookingFrms);
 
     const newsFrms = frms.filter(forum => forum.subject === "news")
-    console.log(newsFrms);
 
     return(
       <div className="Dash">
+        <h1>My Forums</h1>
+        <DashList arr={favs}/>
         <h1>Gaming</h1>
         <DashList arr={gamingFrms}/>
         <h1>History</h1>

@@ -20,13 +20,7 @@ export default function Header({setUser}){
             </NavLink > 
             <NavLink to="/activity" end>
                 Activity
-            </NavLink >   
-            <NavLink to="/topicForm" end>
-                Create Topic
-            </NavLink > 
-              <NavLink to="/saved" end>
-                Saved Topics
-            </NavLink >
+            </NavLink >    
             <button onClick={handleLogoutClick}>Logout</button>   
         </div>
     );

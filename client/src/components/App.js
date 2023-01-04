@@ -7,8 +7,6 @@ import { useEffect, useState } from 'react';
 import Dashboard from "./Dashboard";
 import Search from "./Search";
 import Activity from "./Activity";
-import TopicForm from "./TopicForm";
-import Saved from "./Saved";
 import Login from './Login';
 import ForumPage from './ForumPage';
 
@@ -36,31 +34,28 @@ function App() {
 
   if (!user) return <Login onLogin={setUser} />;
 
-  function handleAddPost(p) {
-    const newF = forums.filter((forum) => {
-      if (forum.posts.length !== p.posts.length) {
-        return forum
-      }
-      else {
-        return p
-      }
-    })
-    setForums(newF);
-  }
+  const uniqueIds = [];
 
+  const unique = (user.forums).filter(element => {
+    const isDuplicate = uniqueIds.includes(element.id)
+    if (!isDuplicate) {
+      uniqueIds.push(element.id)
+      return true
+    }
+    return false; 
+  })
+  console.log(unique)
   console.log(user)
   console.log(forums)
   return (
     <div className='App'>
       <Header setUser={setUser}/>
       <Routes>
-        <Route path="/" element={<Dashboard forums={forums}/>}/>
-        <Route path='/search' element={<Search browse={forums}/>}/>
+        <Route path="/" element={<Dashboard favs={unique} forums={forums}/>}/>
+        <Route path='/search' element={<Search forums={forums} setForums={setForums}/>}/>
         <Route path='/activity' element={<Activity user= {user}/>}/>
-        <Route path='/topicForm' element={<TopicForm/>}/>
-        <Route path="/saved" element={<Saved/>}/>
         {forums.map((page) => {
-          return <Route path={`/${page.id}`} element={<ForumPage key={page.id} user={user} handleAddPost={handleAddPost} page={page}/>} />
+          return <Route path={`/${page.id}`} element={<ForumPage key={page.id} user={user} page={page}/>} />
         })}
       </Routes>
     </div>

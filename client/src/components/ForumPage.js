@@ -1,10 +1,9 @@
-import React, { useState, useEffect} from "react";
+import React, { useState } from "react";
 import PostCard from "./PostCard";
-export default function ForumPage({ user, handleAddPost, page }) {
-  console.log(page);
+export default function ForumPage({ user, page }) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-
+    const [posts, setPosts] = useState(page.posts);
   function handleSubmit(e) {
     e.preventDefault();
     let newPost = {
@@ -21,8 +20,8 @@ export default function ForumPage({ user, handleAddPost, page }) {
       body: JSON.stringify(newPost),
     })
       .then((r) => r.json())
-      .then(data => page.posts.push(data))
-      .then(handleAddPost(page))
+      .then(data => setPosts([...posts, data]))
+    // console.log(page)
     setTitle("");
     setContent("");
   }
@@ -30,8 +29,8 @@ export default function ForumPage({ user, handleAddPost, page }) {
     <div className="forum">
       <h1>{page.topic}</h1>
       <p>{page.subject}</p>
-      {page.posts.length > 0
-        ? page.posts.map((p) => {
+      {posts.length > 0
+        ? posts.map((p) => {
             return <PostCard key={p.id} post={p} />;
           })
         : "No Posts Yet!"}
