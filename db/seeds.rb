@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+subjects = ["cooking", "gaming", "history", "news"]
+
 
 
 30.times do 
@@ -19,7 +21,8 @@ end
 
 50.times do 
     Forum.create(
-        topic: Faker::Hipster.unique.sentence
+        topic: Faker::Hipster.unique.sentence,
+        subject: subjects[rand(subjects.length)]
     )
 end
 
@@ -29,13 +32,6 @@ end
         content: Faker::Hipster.unique.paragraph(sentence_count: 4),
         user_id: Faker::Number.between(from: 1, to: 30),
         forum_id: Faker::Number.between(from: 1, to: 50)
-    )
-end
-
-1000.times do
-    Like.create(
-        user_id: Faker::Number.between(from: 1, to: 30),
-        post_id: Faker::Number.between(from: 1, to: 100)
     )
 end
 

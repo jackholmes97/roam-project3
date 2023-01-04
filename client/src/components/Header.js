@@ -1,8 +1,14 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 
-export default function Header( ){
-   
+export default function Header({setUser}){
+    function handleLogoutClick() {
+        fetch("/logout", { method: "DELETE" }).then((r) => {
+          if (r.ok) {
+            setUser(null);
+          }
+        });
+    }
     return(
         <div>
             <h3>Rome</h3>
@@ -20,7 +26,8 @@ export default function Header( ){
             </NavLink > 
               <NavLink to="/saved" end>
                 Saved Topics
-            </NavLink >       
-            </div>
+            </NavLink >
+            <button onClick={handleLogoutClick}>Logout</button>   
+        </div>
     );
 }
