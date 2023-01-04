@@ -14,13 +14,7 @@ ActiveRecord::Schema.define(version: 2023_01_03_154000) do
 
   create_table "forums", force: :cascade do |t|
     t.string "topic"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
+    t.string "subject"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

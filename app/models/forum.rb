@@ -1,4 +1,4 @@
 class Forum < ApplicationRecord
-  has_many :users
-  has_many :posts, through: :users
+has_many :posts
+has_many :users, through: :posts
 end

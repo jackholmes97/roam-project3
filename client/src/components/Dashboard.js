@@ -1,11 +1,7 @@
 import React, {useState, useEffect} from "react";
 import DashList from "./DashList";
 
-<<<<<<< HEAD
 export default function Dashboard() {
-=======
-export default function Dashboard({forums}) {
->>>>>>> emily1
     const [forums, setForums] = useState([]);
 
     useEffect(() => {
@@ -41,9 +37,6 @@ export default function Dashboard({forums}) {
         <DashList arr={newsFrms}/>
       </div>  
     )
-<<<<<<< HEAD
-}
-=======
 }
 
 
@@ -59,4 +52,3 @@ export default function Dashboard({forums}) {
 
 
 
->>>>>>> emily1

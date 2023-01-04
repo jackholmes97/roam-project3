@@ -6,7 +6,7 @@ export default function DashList({arr}) {
     return(
         <div className="list">
             {arr.map((x) => {
-                return <DashCard key={arr.id} forum= {x}/>
+                return <DashCard key={arr.id} forum={x}/>
             })}
         </div>
     )

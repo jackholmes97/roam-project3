@@ -8,6 +8,12 @@
 
 
 
+subjects = [
+    "gaming",
+    "history",
+    "cooking",
+    "news"
+]
 
 30.times do 
     User.create(
@@ -20,6 +26,7 @@ end
 50.times do 
     Forum.create(
         topic: Faker::Hipster.unique.sentence
+        subject: subjects[rand(subject.length)]
     )
 end
 
@@ -32,12 +39,6 @@ end
     )
 end
 
-1000.times do
-    Like.create(
-        user_id: Faker::Number.between(from: 1, to: 30),
-        post_id: Faker::Number.between(from: 1, to: 100)
-    )
-end
 
 
 
