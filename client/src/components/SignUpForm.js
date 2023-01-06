@@ -1,4 +1,11 @@
 import { useState } from "react";
+import TextField from "@mui/material/TextField";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from "@mui/material/IconButton";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import Button from '@mui/material/Button';
 
 function SignUpForm({ onLogin }) {
 
@@ -7,6 +14,14 @@ function SignUpForm({ onLogin }) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState([]);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -32,39 +47,73 @@ function SignUpForm({ onLogin }) {
     });
   }
   return (
-    <div>
+    <div className="signUpScreen">
+        <h1>Sign Up</h1>
+        <div className="signUpForm">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          onChange={(e) => setUsername(e.target.value)}
-          value={username}
-          placeholder="username"
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          type="text"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-          placeholder="email"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          placeholder="password"
-        />
-        <label htmlFor="password_confirmation">Confirm Password</label>
-        <input
-          type="password"
-          id="password_confirmation"
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
-          autoComplete="current-password"
-        />
-        <input type="submit" value="Signup" />
+      <TextField
+            sx={{ m: 1, width: "300px", background: "transparent" }}
+            className="signup-input"
+            id="margin-normal"
+            label="Username"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            />
+        <TextField
+            sx={{ m: 1, width: "300px", background: "transparent" }}
+            className="signup-input"
+            id="margin-normal"
+            label="Email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            />
+        <OutlinedInput
+                sx={{ m: 1, width: "300px", background: "transparent" }}
+            id="outlined-adornment-password-signup"
+            type={showPassword ? "text" : "password"}
+            onChange={(e) => setPassword(e.target.value)}
+            endAdornment={
+                <InputAdornment position="end">
+                <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+                </InputAdornment>
+            }
+            label="Password"
+            placeholder="Password"
+            />
+        <OutlinedInput
+                sx={{ m: 1, width: "300px", background: "transparent" }}
+            id="outlined-adornment-password-confirm-signup"
+            type={showPassword ? "text" : "password"}
+            onChange={(e) => setPasswordConfirmation(e.target.value)}
+            endAdornment={
+                <InputAdornment position="end">
+                <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+                </InputAdornment>
+            }
+            label="Confirm Password"
+            placeholder="Confirm Password"
+            />
+        <Button type="submit" variant="outlined" sx={{ml: 14, mb: 1}}>Login</Button>
       </form>
+      </div>
     </div>
   );
 }

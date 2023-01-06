@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import PostCard from "./PostCard";
+import PostHistory from "./PostHistory";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 export default function ForumPage({ user, page }) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
@@ -31,24 +34,33 @@ export default function ForumPage({ user, page }) {
       <p>{page.subject}</p>
       {posts.length > 0
         ? posts.map((p) => {
-            return <PostCard key={p.id} post={p} />;
+            return <PostHistory key={p.id} post={p} />;
           })
         : "No Posts Yet!"}
       <h1>Add a Post</h1>
-      <form className="add post" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <textarea
-          placeholder="content"
+    <form className="add post" onSubmit={handleSubmit}>
+<Box
+component="form"
+sx={{
+  '& > :not(style)': { m: 1, width: '19ch', },
+}}
+noValidate
+autoComplete="off"
+>
+<TextField id="filled-basic" sx={{minWidth:"46%", r:"8px"}}  variant="filled" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
+<br></br>
+<TextField
+          id="outlined-multiline-flexible"
+          multiline
+          rows={4}
+          variant="filled"
           value={content}
           onChange={(e) => setContent(e.target.value)}
+          sx={{minWidth:"46%", r:"8px"}}
         />
-        <input type="submit" />
-      </form>
+</Box>
+<Button variant="outlined" type="submit" sx={{mb: 10}} value="Submit" >Submit Forum</Button>
+</form>
     </div>
   );
 }

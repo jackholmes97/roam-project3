@@ -4,6 +4,7 @@ class ForumsController < ApplicationController
         render json: Forum.all
     end
 
+
     def create
         new_forum = Forum.create!(forum_params)
         render json: new_forum, status: :created

@@ -1,38 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap');
 .App {
+  text-align: center;
+  background-image: url("https://cdnb.artstation.com/p/assets/images/images/013/209/709/large/paula-garcia-historical-frames.jpg?1538567690");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+ 
+}
+
+
+.loginForm {
+  background-color: rgb(174, 176, 175);
+  width: 317px;
+  padding: 5px;
+  margin-left: 39%;
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 0 0 5px black;
+}
+.signUpForm {
+  background-color: rgb(174, 176, 175);
+  width: 317px;
+  padding: 5px;
+  margin-left: 39%;
+  display: flex;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px black;
+}
+
+.signUpScreen h1 {
+  text-align: center;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 50px;
+  margin-top: 5px;
+}
+
+.logScreen h1 {
+  text-align: center;
+  font-family: 'Bodoni Moda', serif;
+
+}
+
+.loginn p{
+  margin-left: 42%;
+  padding-bottom: 20px;
+  margin: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#register {
+  text-align: center;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+  left: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#signUpbtn {
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: 'Bodoni Moda', serif;
+  background-color: rgb(174, 176, 175);
+  left: 50%
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.signupp p{
+  margin-left: 5%;
+  padding-bottom: 10px;
+  text-align: center;
+  position: fixed;
+}
+.title {
+  padding-bottom: 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.title h1 {
+  text-align: center;
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 200px;
+  margin-top: -10px;
+  margin-bottom: 0px;
+  padding: -20px;
+  height: 20%
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login {
+  background-image: url("https://data.whicdn.com/images/299945961/original.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 120vh;
+  min-width: 100vh;
+  
 }
+
+h3.rome {
+  font-family:'La Belle Aurore', cursive;
+  font-size: 10rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+h1.my-forums{
+  font-family:  'Bodoni Moda', serif;
+  font-size: 4rem;
+}
+h1.dash-topics{
+  font-family:  'Bodoni Moda', serif;
+  letter-spacing: .2rem;
+}
+
+
+

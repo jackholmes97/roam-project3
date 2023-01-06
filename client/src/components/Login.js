@@ -7,29 +7,31 @@ function Login({onLogin}) {
   
     return (
         <div className='login'>
-            <h1>Rome</h1>
+            <div className='title'>
+                <h1>Rome</h1>
+            </div>
             {showLogin ? (
-            <>
+            <div className='loginn'>
                 <LoginForm onLogin={onLogin} />
                 <br/>
-                <p>
+                <p id='register'>
                 Don't have an account? &nbsp;
-                <button onClick={() => setShowLogin(false)}>
+                <button id='signUpbtn' onClick={() => setShowLogin(false)}>
                     Sign Up
                 </button>
                 </p>
-            </>
+            </div>
             ) : (
-            <>
+            <div className='signupp'>
                 <SignUpForm onLogin={onLogin} />
-                <br></br>
+                
                 <p>
                 Already have an account? &nbsp;
                 <button onClick={() => setShowLogin(true)}>
                     Log In
                 </button>
                 </p>
-            </>
+            </div>
             )}
         </div>
     );

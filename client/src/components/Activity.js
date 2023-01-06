@@ -5,6 +5,7 @@ export default function Activity({user}) {
 
     return(
         <div className="postHistory">
+            <h1>Recent Activity</h1>
             {user.posts.length > 0 ? user.posts.map((p) => {
                 return <PostHistory key={p.id} post={p}/>
             }) : "No Posts Yet!"
@@ -13,5 +14,3 @@ export default function Activity({user}) {
     )
 }
 
-// get  useEffect request to the posts, filtering our the newest posts and mapping over the filtered posts to create a single column
-// get request in App, pass down the data 

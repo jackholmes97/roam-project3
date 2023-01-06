@@ -1,4 +1,11 @@
 import React,{useState} from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Button from '@mui/material/Button';
 export default function CreateTopic({setForums, forums}){
     const [topic, setTopic] = useState("")
     const [subject, setSubject] = useState("")
@@ -20,26 +27,44 @@ function handleSubmit(e){
     setTopic("");
     setSubject("");
 }
-    return(
-        <div className="new-forum">
-            <form className="add-new-forum" onSubmit={handleSubmit}>
-            <input type="text"
-            placeholder="Forum Topic"
-            value={topic}
-            onChange ={(e) => setTopic(e.target.value)}
-            />
-            <select
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            >
-                <option value="choose">Choose Subject</option>
-                <option value="cooking">Cooking</option>
-                <option value="news">News</option>
-                <option value="gaming">Gaming</option>
-                <option value="history">History</option>
-            </select>
-            <input type="submit" value="Submit"/>
+return(
+    <div >
+        <form onSubmit={handleSubmit}>
+                <Box
+                component="form"
+                sx={{
+                  '& > :not(style)': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+                className="add-new-forum"
+              >
+                <TextField id="outlined-basic" label="Add Forum Topic" variant="outlined"  type="text"
+                placeholder="Forum Topic"
+                value={topic}
+                onChange ={(e) => setTopic(e.target.value)}/>
+              </Box>
+                <Box  sx={{
+                  '& > :not(style)': { m: 1, width: '25ch' },
+                }} onSubmit={handleSubmit}>
+                <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Choose Your Subject</InputLabel>
+                <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={subject}
+                label="subject"
+                onChange={(e) => setSubject(e.target.value)}
+                >
+            <MenuItem value="Cooking">Cooking</MenuItem>
+             <MenuItem value="Gaming">Gaming</MenuItem>
+             <MenuItem value="News">News</MenuItem>
+            <MenuItem value="History">History</MenuItem>
+            </Select>
+            </FormControl>
+            </Box>
+            <Button variant="outlined" sx={{mb: 5, l: "45%"}} type="submit" value="Submit" >Submit Forum</Button>
             </form>
-        </div>
-    )
+    </div>
+        )
     }
