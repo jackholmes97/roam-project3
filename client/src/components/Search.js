@@ -3,6 +3,7 @@ import DashCard from "./DashCard";
 import TopicForm from "./TopicForm";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Search({forums, setForums}) {
 
@@ -22,7 +23,7 @@ export default function Search({forums, setForums}) {
       noValidate
       autoComplete="off"
     >
-      <TextField sx={{minWidth: "55%",left:"5px", background: "white"}} id="outlined-basic" label="Search Forums" variant="outlined" type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
+      <TextField sx={{minWidth: "70%",left:"3px", background: "white"}} id="outlined-basic" label={<SearchIcon/>} variant="outlined" type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
     </Box>
             {filteredForums.map((f) => {
                 return <DashCard key={f.id} forum={f}/>

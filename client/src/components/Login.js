@@ -24,13 +24,13 @@ function Login({onLogin}) {
             ) : (
             <div className='signupp'>
                 <SignUpForm onLogin={onLogin} />
-                
-                <p>
+                <p id="existing-account">
                 Already have an account? &nbsp;
-                <button onClick={() => setShowLogin(true)}>
+                <button id="loginBtn" onClick={() => setShowLogin(true)}>
                     Log In
                 </button>
                 </p>
+                <br></br>
             </div>
             )}
         </div>

@@ -35,16 +35,18 @@
   font-family: 'Bodoni Moda', serif;
   font-size: 50px;
   margin-top: 5px;
+  color: rgb(174, 176, 175);
 }
 
 .logScreen h1 {
   text-align: center;
   font-family: 'Bodoni Moda', serif;
-
+  font-size: 50px;
+  color: rgb(174, 176, 175);
 }
 
 .loginn p{
-  margin-left: 42%;
+  margin-left: 48%;
   padding-bottom: 20px;
   margin: 10px;
   text-align: center;
@@ -52,9 +54,20 @@
 
 #register {
   text-align: center;
-  padding-bottom: 0px;
+  padding-bottom: 10%;
   margin-bottom: 0;
-  left: 30px;
+  left: 50px;
+  color: rgb(174, 176, 175);
+}
+#existing-account {
+  text-align: center;
+  display: flex;
+  margin-bottom: 0;
+  margin-top: 0;
+  left: 35%;
+  justify-content: center;
+  align-items: center;
+  color: rgb(174, 176, 175);
 }
 
 #signUpbtn {
@@ -65,13 +78,22 @@
   background-color: rgb(174, 176, 175);
   left: 50%
 }
-
-.signupp p{
+#loginBtn {
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: 'Bodoni Moda', serif;
+  background-color: rgb(174, 176, 175);
+  left: 50%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+/* .signupp p{
   margin-left: 5%;
   padding-bottom: 10px;
   text-align: center;
   position: fixed;
-}
+} */
 .title {
   padding-bottom: 0px;
 }
@@ -83,7 +105,13 @@
   margin-top: -10px;
   margin-bottom: 0px;
   padding: -20px;
-  height: 20%
+  height: 15%;
+  color: rgb(174, 176, 175);
+}
+
+.forum h1 {
+  font-family: 'Bodoni Moda', serif;
+  margin-bottom: 0;
 }
 
 .login {
@@ -108,6 +136,52 @@ h1.my-forums{
 h1.dash-topics{
   font-family:  'Bodoni Moda', serif;
   letter-spacing: .2rem;
+}
+
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #ABD0E2;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#1E4457 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Bodoni Moda', serif;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+  text-decoration: none;
+}
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+.nav-link{
+  text-decoration:none;
 }
 
 

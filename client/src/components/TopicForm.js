@@ -39,7 +39,7 @@ return(
                 autoComplete="off"
                 className="add-new-forum"
               >
-                <TextField id="outlined-basic" label="Add Forum Topic" variant="outlined"  type="text"
+                <TextField id="outlined-basic" label="Add Topic" variant="outlined"  type="text"
                 placeholder="Forum Topic"
                 value={topic}
                 onChange ={(e) => setTopic(e.target.value)}/>
@@ -48,7 +48,7 @@ return(
                   '& > :not(style)': { m: 1, width: '25ch' },
                 }} onSubmit={handleSubmit}>
                 <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Choose Your Subject</InputLabel>
+                <InputLabel id="demo-simple-select-label">Subject</InputLabel>
                 <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"

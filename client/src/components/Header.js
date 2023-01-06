@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 
 export default function Header({setUser}){
     function handleLogoutClick() {
@@ -16,25 +15,17 @@ export default function Header({setUser}){
             <div class="header">
             <h3 class="rome">Rome</h3>
             </div>
-            <Stack spacing={2} direction="row" sx={{display:"flex", justifyContent: 'center'}}>
-            <NavLink to="/" end>
-            <Button  className= "nav-btn"variant="outlined" href="#outlined-buttons"  sx={{backgroundColor: "#FFE57F", color: "#00766C" }}>
-                Dashboard
-                </Button>
+            <Stack spacing={2} direction="row" sx={{display:"flex", justifyContent: 'center', fontFamily: "Bodoni Moda"}}>
+            <NavLink className="nav-link" to="/" end>
+                <button class="button-30" role="button">Dashboard</button>
             </NavLink >
-            <NavLink to="/search" end>
-            <Button  className= "nav-btn"variant="outlined" href="#outlined-buttons" sx={{backgroundColor: "#FFE57F", color: "#00766C"}}>
-                Search
-                </Button>
+            <NavLink className="nav-link"  to="/search" end>
+                <button class="button-30" role="button">Search</button>
             </NavLink >
-            <NavLink to="/activity" end>
-            <Button  className= "nav-btn"variant="outlined" href="#outlined-buttons" sx={{backgroundColor: "#FFE57F", color: "#00766C"}} >
-                Activity
-                </Button>
+            <NavLink className="nav-link" to="/activity" end>
+                <button class="button-30" role="button">Activity</button>
             </NavLink >
-            <Button className= "nav-btn"variant="outlined" href="#outlined-buttons" sx={{backgroundColor: "#FFE57F", color: "#00766C"}}  onClick={handleLogoutClick}>
-            Logout
-            </Button>
+            <button class="button-30" role="button" onClick={handleLogoutClick}>Logout</button>
             </Stack>
         </div>
     );

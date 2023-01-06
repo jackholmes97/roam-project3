@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
 export default function PostHistory({ post }) {
-    const postTime = post.forum.updated_at.split("T")
+    const postTime = post.forum.updated_at
   return (
     <div className="postHistory">
       <Card sx={{ maxWidth: "45%", m: "10px", textAlign: "left", ml: "27%" }}>
@@ -22,7 +22,8 @@ export default function PostHistory({ post }) {
             </Typography>
             <br></br>
             <Typography variant="body2" color="text.secondary">{post.content}</Typography>
-            <Typography variant="body2" color="text.secondary">Posted: {postTime[0]}</Typography>
+            <br></br>
+            <Typography variant="body2" color="text.secondary">{postTime}</Typography>
           </CardContent>
         </CardActionArea>
       </Card>
