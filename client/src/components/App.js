@@ -61,11 +61,6 @@ function App() {
     return false;
   });
 
-
-  
-  console.log(unique)
-  console.log(user)
-  console.log(forums)
   return (
     <div className='App'>
       <Header setUser={setUser}/>

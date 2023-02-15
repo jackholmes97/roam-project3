@@ -52,7 +52,7 @@ export default function ForumPage({ user, page, handleForumState, handleUserStat
       ) : (
         <h1>No Posts Yet!</h1>
       )}
-      <h1>Add a Post</h1>
+      <h1>Add a Comment</h1>
       <form className="add post" onSubmit={handleSubmit}>
         <Box
           component="form"
@@ -85,7 +85,7 @@ export default function ForumPage({ user, page, handleForumState, handleUserStat
           />
         </Box>
         <Button class="button-30" variant="outlined" type="submit" sx={{ mb: 20 }} value="Submit">
-          Submit Forum
+          Submit New Comment
         </Button>
       </form>
     </div>
